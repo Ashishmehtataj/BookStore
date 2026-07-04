@@ -15,8 +15,8 @@ const Freebook = () => {
     useEffect(() => {
         const getBook = async () => {
             try {
-                const res = await axios.get("http://localhost:3000/book")
-                setBook(res.data.filter((data)=>data.price==='0 INR'))
+                const res = await axios.get("https://bookstore1-gb7e.onrender.com/book")
+                setBook(res.data.filter((data) => data.price === '0 INR'))
             } catch (error) {
                 console.log(error)
 
@@ -70,7 +70,7 @@ const Freebook = () => {
                 <div>
                     <Slider {...settings}>
                         {book.map((item) => (
-                            <Cards item={item} key={item.id} />
+                            <Cards item={item} key={item._id} />
                         ))}
                     </Slider>
 

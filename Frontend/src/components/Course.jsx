@@ -10,7 +10,7 @@ function Course() {
     useEffect(()=>{
         const getBook=async()=>{
             try {
-               const res = await axios.get("http://localhost:3000/book")
+               const res = await axios.get("https://bookstore1-gb7e.onrender.com/book")
                setBook(res.data)
             } catch (error) {
                 console.log(error)
@@ -31,7 +31,7 @@ function Course() {
             <div className='grid grid-cols-1 md:grid-cols-3'>
                 {
                     book.map((item) => (
-                        <Cards key={item.id} item={item} />
+                        <Cards key={item._id} item={item} />
                     ))
                 }
             </div>
