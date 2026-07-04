@@ -15,10 +15,10 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://YOUR-FRONTEND.onrender.com"
+        "https://book-store-1lpe7j8ww-ashishmehtataj6-8347s-projects.vercel.app"
     ],
     credentials: true
-}))
+}));
 
 app.use(express.json())
 
