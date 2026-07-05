@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Login from './Login'
 import { useAuth } from '../Context/AuthProvider'
 import Logout from './Logout'
-
+import { Link } from 'react-router-dom'
 
 function Navbar() {
 
@@ -35,21 +35,13 @@ function Navbar() {
     };
 
     const navItems = (
-        <>
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/Course">Course</a>
-            </li>
-            <li>
-                <a href="/Contact">Contact</a>
-            </li>
-            <li>
-                <a href="/About">About</a>
-            </li>
-        </>
-    )
+  <>
+    <li><Link to="/">Home</Link></li>
+    <li><Link to="/course">Course</Link></li>
+    <li><Link to="/contact">Contact</Link></li>
+    <li><Link to="/about">About</Link></li>
+  </>
+);
     return (
         <div className={`max-w-screen-2xl container mx-auto md:px-20 px-4 fixed top-0 left-0 right-0 z-50 ${sticky ? 'sticky-navbar shadow-md bg-base-200 duration-300 transition-all ease-in-out' : ""}`}>
             <div className="navbar">
@@ -68,7 +60,7 @@ function Navbar() {
                 </div>
                 <div className='navbar-end'>
                     <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1 space-x-2 font-semibold">
+                        <ul className="menu menu-horizontal px-10 space-x-2 font-semibold">
                             {navItems}
                         </ul>
                     </div>

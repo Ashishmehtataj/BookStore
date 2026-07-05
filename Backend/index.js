@@ -29,10 +29,6 @@ app.use(express.json());
 const PORT = process.env.PORT || 4000;
 const URI = process.env.MongoDBURL;
 
-
-if (!URI) {
-  console.log("❌ MongoDBURL is undefined (check Render env variables)");
-}
 mongoose.connect(URI)
   .then(() => {
     console.log("✅ MongoDB Connected Successfully");
